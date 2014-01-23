@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-
+has_many :products
 def self.greatethanthree
 find(:all, :conditions => ['id > ?', 3])
 end
