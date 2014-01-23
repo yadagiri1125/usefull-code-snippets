@@ -1,3 +1,13 @@
 #converts all erbs to haml
  find . -name '*erb' | xargs ruby -e 'ARGV.each { |i| puts "html2haml -r #{i} #{i.sub(/erb$/,"haml")}"}' | bash
 
+
+gem install haml
+# converts haml to html
+haml index.haml index.html
+# to convert to htmls5 html document
+haml -f html5 index.haml index.html
+ # --> stands for idv 
+ . --> stands for class
+
+
