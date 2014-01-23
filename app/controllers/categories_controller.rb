@@ -13,8 +13,22 @@ def index
 #@categories_names ||= Category.onlynames
 #@categories ||= Category.greatethanthree
 #@categories ||= Category.onetoten
+#@cat=Category.find(:all, :conditions => ["name=? and id=?", 1, 1])
 
-    #respond_to do |format|
+    Category.find(:all, :conditions => ["name=? and id=?", 1, 1])
+    Category.find(:all, :conditions => ["name=? and id IS ?", 1, nil])
+    Category.find(:all, :conditions => ["complete=? and id IN (?)", 1, [1,3]])
+    Category.find(:all, :conditions => ["name=? and id IN (?)", 1, 1..3])
+
+    Category.find(:all, :conditions => { :name => 1, :id => 1 })
+    Category.find(:all, :conditions => { :name => 1, :id => nil })
+    Category.find(:all, :conditions => { :name => 1, :id => [1,3] })
+    Category.find(:all, :conditions => { :name => 1, :id => 1..3 })
+
+    Task.find_all_by_priority(1..3)
+
+
+  #respond_to do |format|
      #"#{ format.html # index.html.erb
    #   }"format.json { render json: @categories }
     #end
