@@ -15,17 +15,17 @@ def index
 #@categories ||= Category.onetoten
 #@cat=Category.find(:all, :conditions => ["name=? and id=?", 1, 1])
 
-    Category.find(:all, :conditions => ["name=? and id=?", 1, 1])
-    Category.find(:all, :conditions => ["name=? and id IS ?", 1, nil])
-    Category.find(:all, :conditions => ["complete=? and id IN (?)", 1, [1,3]])
-    Category.find(:all, :conditions => ["name=? and id IN (?)", 1, 1..3])
+   # Category.find(:all, :conditions => ["name=? and id=?", 1, 1])
+  #  Category.find(:all, :conditions => ["name=? and id IS ?", 1, nil])
+   # Category.find(:all, :conditions => ["name=? and id IN (?)", 1, [1,3]])
+    #Category.find(:all, :conditions => ["name=? and id IN (?)", 1, 1..3])
 
-    Category.find(:all, :conditions => { :name => 1, :id => 1 })
-    Category.find(:all, :conditions => { :name => 1, :id => nil })
-    Category.find(:all, :conditions => { :name => 1, :id => [1,3] })
-    Category.find(:all, :conditions => { :name => 1, :id => 1..3 })
+   # Category.find(:all, :conditions => { :name => 1, :id => 1 })
+   # Category.find(:all, :conditions => { :name => 1, :id => nil })
+   # Category.find(:all, :conditions => { :name => 1, :id => [1,3] })
+    #Category.find(:all, :conditions => { :name => 1, :id => 1..3 })
 
-    Task.find_all_by_priority(1..3)
+  #  Category.find_all_by_id(1..3)
 
 
   #respond_to do |format|
