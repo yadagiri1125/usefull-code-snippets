@@ -11,3 +11,5 @@ haml -f html5 index.haml index.html
  . --> stands for class
 
 
+# command to convert css to sass
+sass-convert --from css --to sass sample.css
