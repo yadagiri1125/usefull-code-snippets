@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<%= content_for :head  do %>
+    <h3>this is content for from show  </h3>
+<% end %>
 <p>
   <b>Name:</b>
   <%= @category.name %>

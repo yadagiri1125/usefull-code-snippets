@@ -9,6 +9,11 @@
     <th></th>
   </tr>
 
+  <%= content_for :head  do %>
+      <h3>this is content for from index </h3>
+      <% end %>
+
+
 <% @categories.each do |category| %>
   <tr>
     <td><%= category.name %></td>

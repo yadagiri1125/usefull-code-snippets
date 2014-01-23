@@ -1,16 +1,23 @@
 class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
-  def index
+ # layout :conditional_layout
+
+#layout "category"
+def index
+
     @categories ||= Category.all
+    #render :layout => "index"
+    #render :layout => false
+
 #@categories_names ||= Category.onlynames
 #@categories ||= Category.greatethanthree
 #@categories ||= Category.onetoten
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @categories }
-    end
+    #respond_to do |format|
+     #"#{ format.html # index.html.erb
+   #   }"format.json { render json: @categories }
+    #end
   end
 
   # GET /categories/1
@@ -81,6 +88,15 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to categories_url }
       format.json { head :ok }
+    end
+  end
+
+  private
+  def conditional_layout
+    if false
+      "category"
+    else
+      "index"
     end
   end
 end
