@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories ||= Category.all
+#@categories_names ||= Category.onlynames
 #@categories ||= Category.greatethanthree
 #@categories ||= Category.onetoten
 
