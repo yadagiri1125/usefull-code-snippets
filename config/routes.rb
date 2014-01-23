@@ -1,4 +1,8 @@
 Railscasts::Application.routes.draw do
+  resources :sessions
+  match "/login(.:format)" => "sessions#new"
+  match "/logout(.:format)" => "sessions#destroy"
+
   resources :categories
 
   resources :products
