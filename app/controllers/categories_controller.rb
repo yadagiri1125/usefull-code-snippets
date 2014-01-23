@@ -27,6 +27,11 @@ def index
 
   #  Category.find_all_by_id(1..3)
 
+  # eager loading examples
+    #Task.find(:all, :include => :projects)
+    #Task.find(:all, :include => [:projects, :comments])
+    #Task.find(:all, :include => [:projects, {:comments => :user}])
+
 
   #respond_to do |format|
      #"#{ format.html # index.html.erb
