@@ -2,7 +2,9 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories ||= Category.find(1,2)
+    @categories ||= Category.all
+#@categories ||= Category.greatethanthree
+#@categories ||= Category.onetoten
 
     respond_to do |format|
       format.html # index.html.erb
