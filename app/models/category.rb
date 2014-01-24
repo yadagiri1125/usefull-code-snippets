@@ -21,5 +21,15 @@ end
     self.last_name = split.last
   end
 
+def self.search(search)
+  if search
+    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+  else
+    find(:all)
+  end
+end
+
+
+
 
 end

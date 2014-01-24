@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
 #layout "category"
 def index
 
-    @categories ||= Category.all
+    @categories ||= Category.search(params[:search])
     #render :layout => "index"
     #render :layout => false
 
@@ -31,6 +31,26 @@ def index
     #Task.find(:all, :include => :projects)
     #Task.find(:all, :include => [:projects, :comments])
     #Task.find(:all, :include => [:projects, {:comments => :user}])
+
+    # sql injection sample code
+    #@tasks = Task.find(:all, :conditions => ["name LIKE ?", "%#{params[:query]}%"])
+
+  # in_groups_of example , arguments false,1,X
+   #   <table>
+     # <% @tasks.in_groups_of(4, false) do |row_tasks| %>
+  #<tr>
+     # <% for task in row_tasks %>
+    #  <td><%= task.name %></td>
+    #<% end %>
+  #</tr>
+#<% end %>
+#</table>
+
+
+
+
+
+
 
 
   #respond_to do |format|
