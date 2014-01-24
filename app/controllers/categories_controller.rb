@@ -91,15 +91,23 @@ def index
   def create
     @category = Category.new(params[:category])
 
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
-        format.json { render json: @category, status: :created, location: @category }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
+    if params[:preview_button] || !@category.save
+      flash[:notice] = "Successfully created project."
+      render :action => 'new'
+    else
+      flash[:notice] = "Successfully created project."
+      redirect_to categories_path(@category)
     end
+    #respond_to do |format|
+     # if @category.save
+      #  format.html { redirect_to @category, notice: 'Category was successfully created.' }
+       # format.json { render json: @category, status: :created, location: @category }
+      #else
+       # format.html { render action: "new" }
+        #format.json { render json: @category.errors, status: :unprocessable_entity }
+      #end
+    #end
+     # end
   end
 
   # PUT /categories/1

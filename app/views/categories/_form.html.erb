@@ -10,6 +10,10 @@
       </ul>
     </div>
   <% end %>
+    <% if params[:preview_button] %>
+        Hi from prview button
+        <h1><%=@category.name %> </h1>
+    <% end %>
 
   <div class="field">
     <%= f.label :name %><br />
@@ -24,7 +28,11 @@
       <%= f.label :fullname %><br />
       <%= f.text_field :fullname %>
     </div>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
+    <%= submit_tag 'Preview', :name => 'preview_button' %>
 <% end %>
